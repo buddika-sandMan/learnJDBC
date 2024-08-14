@@ -2,14 +2,14 @@ import java.sql.*;
 
 public class Main {
     public static void main(String[] args) {
-        String sqlStatement="update Customer set salary=salary*1.5";
+        String sqlStatement="delete Customer where name='Jinasena'";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection connection = DriverManager.getConnection("jdbc:mysql://localhost/thogaKade", "root", "root");
             Statement stm= connection.createStatement();
             int res=stm.executeUpdate(sqlStatement);
             if(res>0){
-                System.out.println("Update success!!!");
+                System.out.println("Delete success!!!");
                 System.out.println("No if row count " + res);
             }
         } catch (ClassNotFoundException ex) {
